@@ -14,7 +14,7 @@ services:
         - PORT=8081
     build:
       context: ../
-      dockerfile: ./reverse-proxy/miam.Dockerfile
+      dockerfile: ./rproxy/miam.Dockerfile
   cv:
     container_name: cv
     image: "cv:latest"
@@ -22,4 +22,4 @@ services:
         - PORT=8082
     build:
       context: ../
-      dockerfile: ./reverse-proxy/cv.Dockerfile
+      dockerfile: ./rproxy/cv.Dockerfile
