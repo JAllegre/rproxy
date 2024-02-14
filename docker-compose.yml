@@ -1,0 +1,25 @@
+services:
+  rproxy:
+    container_name: rproxy
+    image: "rproxy:latest"
+    build:
+      context: ./
+      dockerfile: rproxy.Dockerfile
+    ports:
+      - "80:80"
+  miam:
+    container_name: miam
+    image: "miam:latest"
+    environment:
+        - PORT=8081
+    build:
+      context: ../
+      dockerfile: ./reverse-proxy/miam.Dockerfile
+  cv:
+    container_name: cv
+    image: "cv:latest"
+    environment:
+        - PORT=8082
+    build:
+      context: ../
+      dockerfile: ./reverse-proxy/cv.Dockerfile
