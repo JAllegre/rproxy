@@ -8,6 +8,8 @@ RUN crontab /etc/cron.d/rproxy-cron
 
 RUN update-rc.d cron defaults
 
+RUN service cron start
+
 COPY common/locations.conf /etc/nginx/common/locations.conf
 
 RUN mkdir -p /usr/share/nginx/html/.well-known/acme-challenge
