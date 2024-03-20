@@ -2,7 +2,9 @@ FROM nginx:latest
 
 RUN apt-get update -y
 
-RUN apt-get install -y nano
+RUN apt-get install -y nano cron python3-certbot-nginx
+
+COPY rproxy-cron /etc/cron.d/rproxy-cron
 
 COPY common/locations.conf /etc/nginx/common/locations.conf
 
@@ -17,6 +19,7 @@ COPY conf/default.conf /etc/nginx/conf.d/default.conf
 # Comment lines below  when using in localhost , otherwise nginx will fail
 COPY conf/pibox.hd.free.fr.conf /etc/nginx/conf.d/pibox.hd.free.fr.conf
 
+RUN crontab /etc/cron.d/rproxy-cron
 
 
 
