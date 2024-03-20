@@ -15,7 +15,7 @@ COPY conf/jallegre.freeboxos.fr.conf /etc/nginx/conf.d/jallegre.freeboxos.fr.con
 
 RUN mkdir -p /usr/share/nginx/html/.well-known/acme-challenge
 
-RUN chown a+rwx /usr/share/nginx/html/.well-known/acme-challenge
+RUN chmod a+rwx /usr/share/nginx/html/.well-known/acme-challenge
 
 COPY ./tester.html /usr/share/nginx/html/.well-known/acme-challenge/tester.html
 
