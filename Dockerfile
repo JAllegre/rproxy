@@ -2,7 +2,7 @@ FROM nginx:latest
 
 RUN apt-get update -y
 
-RUN apt-get install -y python3-certbot-nginx
+RUN apt-get install -y nano python3-certbot-nginx
 
 COPY common/locations.conf /etc/nginx/common/locations.conf
 

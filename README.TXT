@@ -4,6 +4,11 @@ Install first the docker container then connect it then run the following comman
 
 > certbot --nginx -d jallegre.freeboxos.fr --non-interactive --agree-tos -m ju.allegre@gmail.com
 
+> certbot --nginx -d pibox.hd.free.fr --non-interactive --agree-tos -m ju.allegre@gmail.com
+
 This will replace config in .conf file  
 
 This tool will also add renew cron to check and renew certificates on a daily basis
+
+
+
