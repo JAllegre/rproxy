@@ -2,9 +2,9 @@ FROM nginx:latest
 
 RUN apt-get update -y && apt-get install -y nano cron python3-certbot-nginx
 
-COPY rproxy-cron /etc/cron.d/rproxy-cron
+# COPY rproxy-cron /etc/cron.d/rproxy-cron
 
-RUN crontab /etc/cron.d/rproxy-cron
+# RUN crontab /etc/cron.d/rproxy-cron
 
 RUN update-rc.d cron defaults
 
