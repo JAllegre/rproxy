@@ -17,6 +17,8 @@ RUN mkdir -p /usr/share/nginx/html/.well-known/acme-challenge
 
 RUN chmod a+rwx /usr/share/nginx/html/.well-known/acme-challenge
 
+RUN chown -R www-data:www-data /usr/share/nginx/html/.well-known/acme-challenge/*
+
 COPY ./tester.html /usr/share/nginx/html/.well-known/acme-challenge/tester.html
 
 
