@@ -1,2 +1,3 @@
 * * * * *   echo "Hello $(date)" >>/var/log/pipo.log 2>&1
+0 0,12 * * * certbot renew -q 
 
