@@ -13,5 +13,11 @@ COPY conf/pibox.hd.free.fr.conf /etc/nginx/conf.d/pibox.hd.free.fr.conf
 
 COPY conf/jallegre.freeboxos.fr.conf /etc/nginx/conf.d/jallegre.freeboxos.fr.conf
 
+RUN mkdir -p /usr/share/nginx/html/.well-known/acme-challenge
+
+RUN chown a+rwx /usr/share/nginx/html/.well-known/acme-challenge
+
+COPY ./tester.html /usr/share/nginx/html/.well-known/acme-challenge/tester.html
+
 
 
