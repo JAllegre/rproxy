@@ -1,14 +1,26 @@
-On a fresh system install , configure letsencrypt SSL certs with cerbot:
+# rproxy service
 
-Install first the docker container then connect it then run the following command on it
+## Certificate configuration
 
-> certbot --nginx -d jallegre.freeboxos.fr --non-interactive --agree-tos -m ju.allegre@gmail.com
+On a fresh system install , configure letsencrypt SSL certs with cerbot
+
+Install first the docker rproxy container and do the following on it: 
+
+!!! BE SURE TO BE ON THE RIGHT container
+
+- Install python3-certbot-nginx
+
+> apt-get install -y python3-certbot-nginx
+
+- Run cerbot 
 
 > certbot --nginx -d pibox.hd.free.fr --non-interactive --agree-tos -m ju.allegre@gmail.com
 
 This will replace config in .conf file  
 
-This tool will also add renew cron to check and renew certificates on a daily basis
+Copy new conf file into git (pibox.hd.free.fr.conf)
+
+
 
 
 
